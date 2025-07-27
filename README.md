@@ -10,10 +10,10 @@ data/
 figures/        
 results/        
 notebooks/
-  00_eda.ipynb
-  01_merge_clean.ipynb
-  02_models_compare.ipynb
-  03_error_analysis.ipynb
+00_eda.ipynb
+01_merge_clean.ipynb
+02_models_compare.ipynb
+03_error_analysis.ipynb
 report/
   paper_ieee.pdf
 
