@@ -5,17 +5,17 @@ Machine‑learning comparison of Logistic Regression, Linear SVM, Random Forest 
 ---
 ## Repo contains
 data/
-  raw/          # original PHN files (kept local, not committed)
+  raw/          # original PHN files (kept local, not committed) 
+  R102.csv   # Pre-Norwood
+  R103.csv   # Norwood hospitalization
+  R301.csv   # Echo Core Lab
+  #Other PHN forms exist but were not used in this analysis (e.g., R104, R206 were excluded to prevent data leakage).
   processed/    
 figures/        
 results/        
-notebooks/
-00_eda.ipynb
-01_merge_clean.ipynb
-02_models_compare.ipynb
-03_error_analysis.ipynb
+ Copy_of_ml-assign-codes-final.ipynb   # consolidated notebook with EDA, preprocessing, models, and evaluation
 report/
-  paper_ieee.pdf
+  Ieee_ML_25011484.pdf # submitted version
 
 ## How to reproduce (3 steps)
 1. **Install deps** (any Python ≥3.9):  
@@ -30,6 +30,8 @@ https://www.pediatricheartnetwork.org/public-use-data-sets/
 The NIH/NHLBI Pediatric Heart Network Single Ventricle Reconstruction (trial) public dataset was used in preparation of this work. Data were downloaded on 20/07/2025.
 *(NIH = National Institutes of Health
 NHLBI = National Heart, Lung, and Blood Institute (the NIH institute that funds PHN)*
+- Variables used correspond to R102 (Pre-Norwood), R103 (Norwood hospitalization), R301 (Echo Core Lab).
+
 
 > Raw data are **not** in this repo due to PHN terms. Only derived/cleaned outputs are stored.
 
@@ -40,13 +42,15 @@ NHLBI = National Heart, Lung, and Blood Institute (the NIH institute that funds 
 - Gradient Boosting (HistGradientBoostingClassifier)  
 Metrics: Accuracy, ROC‑AUC, Precision/Recall/F1 (weighted). Calibration & confusion matrices included.  
 Rejected model discussed: k‑NN (curse of dimensionality, slow) / Deep nets (overkill, low interpretability).
-
+Hyperparameters tuned via cross-validation (details in report §III.C)
 
 ## Key figures 
 1. Class balance & missingness overview (EDA)  
-2. ROC curves for all models  
-3. Confusion matrix + calibration for best model  
-4. Feature importance (permutation / Gini)
+2. Test-set performance comparison (bar chart: ROC-AUC & accuracy)  
+3. Calibration curve for Gradient Boosting  
+4. Feature importance (Core vs Extended)
+5. Calibration curves included; confusion matrices considered but not shown in final report
+   
 
 
 ## License / privacy
