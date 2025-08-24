@@ -21,7 +21,7 @@ report/
 1. **Install deps** (any Python ≥3.9):  
    `pip install -r requirements.txt`  *(or just use your local env/anaconda)*  
 2. **Place data**: download PHN SVR public dataset (see link below) and drop the CSVs in `data/raw/`.  
-3. **Run notebooks in order** (00 → 03). Plots auto-save to `figures/`, cleaned CSV to `data/processed/`.
+3. **Run notebooks in order**. Plots auto-save to `figures/`, cleaned CSV to `data/processed/`.
 
 ## Data access & acknowledgement
 - Download from the Pediatric Heart Network
